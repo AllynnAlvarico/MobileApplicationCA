@@ -1,0 +1,12 @@
+https://medium.com/@bectorhimanshu/parsing-a-string-into-a-jsonobject-in-java-and-vice-versa-1589b0b9edd2
+
+https://www.geeksforgeeks.org/android/volley-library-in-android/
+
+https://javadoc.io/doc/org.json/json/20171018/org/json/JSONObject.html
+
+https://javadoc.io/doc/com.android.volley/volley/latest/com/android/volley/toolbox/JsonObjectRequest.html
+
+https://google.github.io/volley/requestqueue.html
+
+https://free-apis.github.io/#/browse
+

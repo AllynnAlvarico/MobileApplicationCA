@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
     }
-    
+
     public void signIn(View view) {
         String email = editTextEmail.getText().toString();
         String password = editTextPassword.getText().toString();
