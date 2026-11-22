@@ -8,7 +8,20 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+
 public class MainActivity extends AppCompatActivity {
+
+    EditText editTextEmail = findViewById(R.id.txtEmail);
+    EditText editTextPassword = findViewById(R.id.txtPassword);
+    Button btnSignIn = findViewById(R.id.btnSignIn);
+
+    FirebaseAuth auth = FirebaseAuth.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,5 +33,12 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+    }
+    
+    public void signIn(View view) {
+        String email = editTextEmail.getText().toString();
+        String password = editTextPassword.getText().toString();
+
+
     }
 }
