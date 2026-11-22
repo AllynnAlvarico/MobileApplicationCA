@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "709184158510",
+    "project_id": "mobileapplicationca",
+    "storage_bucket": "mobileapplicationca.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:709184158510:android:8584d1bef1369b431c58bf",
+        "android_client_info": {
+          "package_name": "alvarico.allynn"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEz0mBiJs15In6sQW3ip82ViQnan38t5w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
