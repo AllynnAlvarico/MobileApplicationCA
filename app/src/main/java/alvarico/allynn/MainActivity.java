@@ -15,11 +15,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity {
 
     EditText editTextEmail;
     EditText editTextPassword;
@@ -42,14 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnSignIn = findViewById(R.id.btnSignIn);
         auth = FirebaseAuth.getInstance();
 
-//        btnSignIn.setOnClickListener( v -> signIn(v));
-    }
-
-    @Override
-    public void onClick(View clickedView) {
-        if (clickedView == btnSignIn) {
-            signIn();
-        }
+        btnSignIn.setOnClickListener( v -> signIn());
     }
 
     public void signIn() {
@@ -61,9 +55,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             System.out.println("Email: " + email);
             System.out.println("Password: " + password);
+            authentication(email, password);
         }
 
         btnSignIn.setEnabled(false);
+
+        System.out.println("Enter line 70");
 
     }
 
@@ -76,9 +73,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return "Failed to login.";
     }
 
-    public void authentication(View v, String email, String password){
-        Task<AuthResult> task = auth.signInWithEmailAndPassword(email, password);
-
+    public void authentication(String email, String password){
+        Task<AuthResult> signInTask = auth.signInWithEmailAndPassword(email, password);
+        MainActivity currentActivity = this;
+        OnCompleteListener<AuthResult> signInListener = (OnCompleteListener<AuthResult>) currentActivity;
+        signInTask.addOnCompleteListener(currentActivity, signInListener);
     }
 
 }
